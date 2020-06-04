@@ -1,0 +1,12 @@
+.hero {
+    height: 100vh;
+    margin-top: -111px; //was 105
+    padding-top: 111px;
+    position: relative;
+    background: $black;
+    display: flex;
+    align-items: center;
+    .background-image {
+        opacity: .5;
+    }
+}

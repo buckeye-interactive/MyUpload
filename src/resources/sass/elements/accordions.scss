@@ -1,0 +1,29 @@
+.accordion-group {
+    margin-bottom: 50px;
+    .accordion-column {
+        .accordion-block {
+            .accordion-header {
+                cursor: pointer;
+                transition: background .2s ease-in-out;
+                h3, p {
+                    flex: 1 0 50%;
+                }
+                p {
+                    i {
+                        transition: transform .2s ease-in-out;
+                    }
+                }
+                &[aria-expanded="true"] {
+                    p {
+                        i {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+                &:hover {
+                    background: $grey !important;
+                }
+            }
+        }
+    }
+}

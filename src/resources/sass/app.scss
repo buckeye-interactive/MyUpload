@@ -1,0 +1,7 @@
+// Variables
+@import 'general/variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap', '~daterangepicker/daterangepicker', 'general/general', 'elements/header',
+    'elements/hero', 'elements/forms', 'elements/image-grid', 'elements/accordions', 'elements/modals',
+    'general/sections', 'elements/footer', 'elements/dropzone', 'elements/home';

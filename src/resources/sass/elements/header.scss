@@ -1,0 +1,42 @@
+header.header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: $white;
+    box-shadow: 0 6px 6px -6px #ccc;
+
+    .navbar-brand img {
+        height: 70px;
+    }
+
+    &.interior {
+        position: fixed;
+        width: auto;
+        padding: 15px 0 25px;
+        background: $primary;
+        height: 100vh;
+        display: block;
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li {
+                margin-bottom: 10px;
+                a {
+                    display: block;
+                    padding: 10px;
+                    transition: color 0.2s ease-in-out;
+                    text-decoration: none;
+                    color: rgba($black, 0.3);
+                    font-size: 20px;
+                    &:hover,
+                    &.active {
+                        color: rgba($white, 1);
+                    }
+                }
+            }
+        }
+    }
+}

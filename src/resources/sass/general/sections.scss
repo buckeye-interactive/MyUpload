@@ -1,0 +1,13 @@
+section {
+    height: auto;
+    clear: both;
+    width: 100%;
+    background: $white;
+    padding: 150px 0;
+    &:nth-of-type(even) {
+        background: $light-grey;
+    }
+    &.dashboard-section {
+        padding: 75px 0;
+    }
+}
