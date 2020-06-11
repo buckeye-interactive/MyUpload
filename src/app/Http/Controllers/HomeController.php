@@ -78,15 +78,18 @@ class HomeController extends Controller
             ],
         ])->validate();
 
-        $secret = env('RECAPTCHA_SECRET');
-        $remote = $_SERVER['REMOTE_ADDR'];
-        $captchaId = $request->input('g-recaptcha-response');
+        // Allow recapcha if it is enabled
+        if (env('RECAPCHA_SECRET')) {
+            $secret = env('RECAPTCHA_SECRET');
+            $remote = $_SERVER['REMOTE_ADDR'];
+            $captchaId = $request->input('g-recaptcha-response');
 
-        $responseCaptcha = json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $captchaId . '&remoteip=' . $remote));
-        $responseCaptcha = $responseCaptcha->success;
+            $responseCaptcha = json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $captchaId . '&remoteip=' . $remote));
+            $responseCaptcha = $responseCaptcha->success;
 
-        if (!$responseCaptcha) {
-            return back()->withErrors('Please check the RECAPTCHA.');
+            if (!$responseCaptcha) {
+                return back()->withErrors('Please check the RECAPTCHA.');
+            }
         }
 
         $request->session()->put('user_email', $request->email);

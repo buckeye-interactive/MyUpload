@@ -33,18 +33,20 @@
             @include('layouts.partials.footer')
         @show
         
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GA_PROPERTY_ID') }}"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+        @if(env('GA_PROPERTY_ID'))
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GA_PROPERTY_ID') }}"></script>
+            <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-          gtag('config', '{{ env('GA_PROPERTY_ID') }}');
-        </script>
+            gtag('config', '{{ env('GA_PROPERTY_ID') }}');
+            </script>
+        @endif
 
         <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
         <script src='https://www.google.com/recaptcha/api.js'></script>
-        <script src="{{ asset('assets/bundle.js', true) }}"></script>
+        <script src="{{ asset('assets/bundle.js') }}"></script>
     </body>
 </html>

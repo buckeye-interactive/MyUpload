@@ -5,17 +5,15 @@ export COMPOSE_PROJECT_NAME=example
 export LOCAL_DOMAIN=$(COMPOSE_PROJECT_NAME).localhost
 
 # Remote Server Parameters
-PROD_WEB_SERVER=web1.$(SITE_DOMAIN)
+PROD_WEB_SERVER=localhost
 PROD_SSH_USER=ubuntu
 
 # Paths
 export SRC_ROOT=../src
 
 # Image Build Settings
-export REGISTRY_URL=
 export DOCKER_TAG=latest
-export WEB_BUILD_PATH=$(COMPOSE_PROJECT_NAME)/web
-export WEB_REPO_NAME=$(REGISTRY_URL)/$(WEB_BUILD_PATH)
+export WEB_REPO_NAME=$(COMPOSE_PROJECT_NAME)
 export WEB_IMAGE_NAME=$(WEB_REPO_NAME):$(DOCKER_TAG)
 
 # App Settings
@@ -63,10 +61,10 @@ SQL_BACKUP_FILE=backup.psql
 -include env.mk
 
 up:
-ifndef NO_PULL
-	docker-compose pull
-endif
 	docker-compose up -d
+
+pull:
+	docker-compose pull
 
 logs:
 	docker-compose logs -f
@@ -81,7 +79,13 @@ web-shell:
 db-shell:
 	$(DOCKER_DB_EXEC) psql -U $(DB_USERNAME)
 
-setup-dev-environment: up fetch-db import-db
+setup-environment: up run-migrations run-seeders
+
+run-migrations:
+	$(DOCKER_WEB_EXEC) php artisan migrate
+
+run-seeders:
+	$(DOCKER_WEB_EXEC) php artisan db:seed
 
 fetch-db:
 	CNAME=$$(ssh $(PROD_SSH_USER)@$(PROD_WEB_SERVER) $(DB_CONTAINER_NAME)) && \

@@ -116,7 +116,7 @@ $(function () {
             axios
                 .post('/api/session-store', {
                     email: emailInput.val(),
-                    'g-recaptcha-response': recaptchaInput.val(),
+                    'g-recaptcha-response': recaptchaInput.length > 0 && recaptchaInput.val(),
                 })
                 .then(() => $('#media-collapse').collapse('show'))
                 .catch((e) => {
@@ -146,7 +146,7 @@ $(function () {
             if (nameInput.val() == '') valid = false;
             if (!phoneDigits || phoneDigits.length < 10) valid = false;
             if (emailInput.val() == '') valid = false;
-            if (recaptchaInput.val() == '') valid = false;
+            if (recaptcha.length > 0 && recaptchaInput.val() == '') valid = false;
 
             if (valid) infoSubmit.removeAttr('disabled');
             else infoSubmit.attr('disabled', 'disabled');
