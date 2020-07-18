@@ -26,7 +26,7 @@
                     <div class="accordion-block">
 
                         <div
-                        class="accordion-header bg-light d-flex align-items-center p-3"
+                        class="accordion-header bg-light align-items-center p-3"
                         id="accordion-header-{{ $mediaItem->id }}"
                         data-toggle="collapse"
                         data-target="#accordion-body-{{ $mediaItem->id }}"
@@ -42,7 +42,7 @@
                             
                             <p class='mb-0 align-self-end text-right'><i class="fas fa-chevron-down"></i></p>
         
-                        </div> <!-- accordion-header bg-light d-flex p-3 -->
+                        </div> <!-- accordion-header bg-light p-3 -->
 
                         <div id="accordion-body-{{ $mediaItem->id }}" class="bg-light collapse accordion-body" aria-labelledby="accordion-header-{{ $mediaItem->id }}" data-parent="#accordion">
 
