@@ -58,13 +58,24 @@
 
                                     <div class="button-container mb-5">
 
-                                        <button
-                                        class="btn btn-info"
-                                        data-toggle='modal'
-                                        data-target='#view-modal-{{ $mediaItem->id }}'
-                                        >
-                                            {{ __('View Media') }} <i class="fas fa-eye"></i>
-                                        </button>
+                                        @if (in_array($type, ['jpg','jpeg','png','gif','bmp','ico','mp4','mp3']))
+                                            <button
+                                            class="btn btn-info"
+                                            data-toggle='modal'
+                                            data-target='#view-modal-{{ $mediaItem->id }}'
+                                            >
+                                                {{ __('Preview Media') }} <i class="fas fa-eye"></i>
+                                            </button>
+
+                                        @else
+                                            <a
+                                            href="{{ $media->getFullUrl() }}"
+                                            target="_blank"
+                                            class="btn btn-info"
+                                            >
+                                                {{ __('Download Media') }} <i class="fas fa-download"></i>
+                                            </a>
+                                        @endif
 
                                     </div> <!-- button-container mb-5 -->
 
