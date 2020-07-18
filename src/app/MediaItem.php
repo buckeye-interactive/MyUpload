@@ -72,6 +72,12 @@ class MediaItem extends Model implements HasMedia
         return $query->whereBetween('updated_at', [$start, $endDate]);
     }
 
+    public function setOriginalDateAttribute($value) {
+        $time = strtotime($value);
+        // Iff conversion to time is successful, save value in Y-m-d format
+        $this->attributes['original_date'] = ($time ? date('Y-m-d',$time) : $value);
+    }
+
     public function registerMediaConversions(Media $media = null)
     {
         $this->addMediaConversion('grid')
