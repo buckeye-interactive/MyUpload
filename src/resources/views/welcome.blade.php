@@ -20,7 +20,7 @@
                         <img class="instruction-human first d-none d-md-block" src="{{ asset('images/instructional-human.png') }}" alt="Person">
                     </div>
                     <h3 class='text-primary'>Step 1:</h3>
-                    <p class="mb-5"><strong>Upload your items in the box above.</strong> Upload as many images/videos/audio files as you'd like. Accepted file formats are: .jpg .tiff .pdf .wav .mp3 .mp4</p>
+                    <p class="mb-5"><strong>Upload your items in the box above.</strong> Upload as many images/videos/audio files as you'd like. Accepted file formats are: {{ env('UPLOAD_FILE_TYPES') }}</p>
                 </div>
                 <div class="col-md-4">
                     <div class="position-relative">
