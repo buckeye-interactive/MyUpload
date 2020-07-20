@@ -38,7 +38,7 @@
                     class='btn btn-primary btn-large'
                     role='link'
                 >
-                    Add More Images
+                    Add More Files
                 </a>
 
             </div> <!-- button-container mt-2 w-50 mx-auto d-flex align-items-center justify-content-center -->

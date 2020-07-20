@@ -26,7 +26,7 @@
                     <div class="accordion-block">
 
                         <div
-                        class="accordion-header bg-light d-flex align-items-center p-3"
+                        class="accordion-header bg-light align-items-center p-3"
                         id="accordion-header-{{ $mediaItem->id }}"
                         data-toggle="collapse"
                         data-target="#accordion-body-{{ $mediaItem->id }}"
@@ -42,7 +42,7 @@
                             
                             <p class='mb-0 align-self-end text-right'><i class="fas fa-chevron-down"></i></p>
         
-                        </div> <!-- accordion-header bg-light d-flex p-3 -->
+                        </div> <!-- accordion-header bg-light p-3 -->
 
                         <div id="accordion-body-{{ $mediaItem->id }}" class="bg-light collapse accordion-body" aria-labelledby="accordion-header-{{ $mediaItem->id }}" data-parent="#accordion">
 
@@ -58,13 +58,24 @@
 
                                     <div class="button-container mb-5">
 
-                                        <button
-                                        class="btn btn-info"
-                                        data-toggle='modal'
-                                        data-target='#view-modal-{{ $mediaItem->id }}'
-                                        >
-                                            {{ __('View Media') }} <i class="fas fa-eye"></i>
-                                        </button>
+                                        @if (in_array($type, ['jpg','jpeg','png','gif','bmp','ico','mp4','mp3']))
+                                            <button
+                                            class="btn btn-info"
+                                            data-toggle='modal'
+                                            data-target='#view-modal-{{ $mediaItem->id }}'
+                                            >
+                                                {{ __('Preview Media') }} <i class="fas fa-eye"></i>
+                                            </button>
+
+                                        @else
+                                            <a
+                                            href="{{ $media->getFullUrl() }}"
+                                            target="_blank"
+                                            class="btn btn-info"
+                                            >
+                                                {{ __('Download Media') }} <i class="fas fa-download"></i>
+                                            </a>
+                                        @endif
 
                                     </div> <!-- button-container mb-5 -->
 

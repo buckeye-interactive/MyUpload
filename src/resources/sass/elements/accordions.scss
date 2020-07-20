@@ -5,10 +5,11 @@
             .accordion-header {
                 cursor: pointer;
                 transition: background .2s ease-in-out;
-                h3, p {
-                    flex: 1 0 50%;
+                h3 {
+                    display: inline-block;
                 }
                 p {
+                    float: right;
                     i {
                         transition: transform .2s ease-in-out;
                     }

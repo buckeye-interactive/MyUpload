@@ -357,6 +357,9 @@ class MediaItemController extends Controller
             if ($json) {
                 return response()->json('', 422);
             }
+            if($request->user()) {
+                return redirect()->route('admin');
+            }
             return $this->completed($request);
         }
     }

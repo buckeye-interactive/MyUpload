@@ -250,6 +250,8 @@
         <button id='confirm-info-button' data-toggle='modal' data-target='#info-modal' class='btn btn-primary mt-2'>
             {{ __('Submit for Approval') }}
         </button>
+    @else
+        <input type="submit" class="btn btn-primary" value="Save Changes" />
     @endif
 
 </form>

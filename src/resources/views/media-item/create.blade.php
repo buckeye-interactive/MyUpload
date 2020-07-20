@@ -132,7 +132,7 @@
                     <h2 class="h3">{{ __("Instructions:") }}</h2>
                 </div>
                 <ol>
-                    <li>Upload your items in the box on the left. Upload as many images/videos/audio files as you'd like. Accepted file formats are: <strong>.jpg .tiff .pdf .wav .mp3 .mp4</strong></li> 
+                    <li>Upload your items in the box on the left. Upload as many images/videos/audio files as you'd like. Accepted file formats are: <strong>{{ env('UPLOAD_FILE_TYPES') }}</strong></li>
                     <li>Describe your items. Remember to hit submit after you upload your items in the box. The description screen will appear for each item.</li>
                     <li class="mb-3">Submit. A librarian will review your submission and let you know when it is approved.</li>
                     <strong>**Note: JavaScript must be enabled for this form to work.</strong>

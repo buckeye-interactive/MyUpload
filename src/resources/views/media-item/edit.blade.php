@@ -37,13 +37,19 @@
                 {{ __('Your browser does not support the video tag.') }}
             </video>
 
-        @else
+        @elseif (in_array($type, ['jpg','jpeg','png','gif','bmp','ico']))
 
             <a href="{{ $media->getFullUrl() }}" data-toggle="lightbox">
                 <img
                 class='img-fluid'
                 src="{{ $media->getFullUrl() }}"
                 alt="{{ !empty($media->description) ? $media->description : $media->name }}">
+            </a>
+
+        @else
+
+            Preview <a href="{{ $media->getFullUrl() }}" target="_blank">
+                {{ !empty($media->description) ? $media->description : $media->name }}
             </a>
 
         @endif
