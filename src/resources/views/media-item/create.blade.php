@@ -98,7 +98,7 @@
                                 <div class="row">                                
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label>Metadata (author, description, rights, etc.)*</label>
+                                            <label>Metadata (author, description, etc.)*</label>
                                             <label class="custom-checkbox">Submit metadata for each item individually
                                                 <input 
                                                     checked
