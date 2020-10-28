@@ -106,7 +106,7 @@ $(function () {
 
         myDropzone.on('error', function (file) {
             uploadSubmit.prop('disabled', false);
-            uploadSubmit.html('Submit for Approval');
+            uploadSubmit.html('Submit');
         });
 
         infoSubmit.on('click', () => {
