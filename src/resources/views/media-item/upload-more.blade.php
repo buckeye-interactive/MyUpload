@@ -7,7 +7,7 @@
         <div class="container text-center">
 
             <h1 class='text-primary display-4 mb-2'>Thank you!</h1>
-            <h2 class='display-5 mb-5'>Your item has been uploaded. You will receive an email from a librarian when your item is loaded.</h2>
+            <h2 class='display-5 mb-5'>{{ config('myupload.thankyou') }}</h2>
             
             <div class="button-container mt-2 w-50 mx-auto d-flex align-items-center justify-content-center">
 

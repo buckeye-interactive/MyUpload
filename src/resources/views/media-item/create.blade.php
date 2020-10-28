@@ -10,7 +10,7 @@
         <div class="row">
             <div class="top-five w-45 my-3">
                 <div class="title mx-4">
-                    <h1 class="h3">We are looking for photographs, documents and audiovisual materials that tell the stories of central Ohio. Our most wanted subjects are:</h1>
+                    <h1 class="h3">{{ config('myupload.wanted_items_text') }}</h1>
                 </div>
                 <ul>
                     @foreach ($wantedPhotos as $item)
@@ -134,7 +134,7 @@
                 <ol>
                     <li>Upload your items in the box on the left. Upload as many images/videos/audio files as you'd like. Accepted file formats are: <strong>{{ env('UPLOAD_FILE_TYPES') }}</strong></li>
                     <li>Describe your items. Remember to hit submit after you upload your items in the box. The description screen will appear for each item.</li>
-                    <li class="mb-3">Submit. A librarian will review your submission and let you know when it is approved.</li>
+                    <li class="mb-3">Submit. {{ config('myupload.submit_step_text') }}</li>
                     <strong>**Note: JavaScript must be enabled for this form to work.</strong>
                 </ol>
             </div>
