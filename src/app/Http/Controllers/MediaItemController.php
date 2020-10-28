@@ -133,7 +133,7 @@ class MediaItemController extends Controller
             "title" => "required",
             "description" => "required",
             "credit" => "required",
-            "copyright" => "required",
+            "copyright" => config('myupload.copyright_disabled') ? '' : "required",
             "authorization" => "required"
         ]);
 
@@ -161,7 +161,7 @@ class MediaItemController extends Controller
             "title" => "required",
             "description" => "required",
             "credit" => "required",
-            "copyright" => "required",
+            "copyright" => config('myupload.copyright_disabled') ? '' : "required",
             "authorization" => "required"
         ]);
 

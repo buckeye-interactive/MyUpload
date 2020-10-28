@@ -160,12 +160,13 @@
                 class='form-control'
                 data-previous="{{ optional($previousItem)->credit }}"
                 >{{ old('credit', optional($mediaItem)->credit) }}</textarea>
-                <small class='form-text text-muted'>How would you like your name to appear on My History?</small>
+                <small class='form-text text-muted'>How would you like your name to appear on {{ config('myupload.title') }}?</small>
 
             </div> <!-- form-group -->
 
         </div> <!-- col -->
 
+        @if(!config('myupload.copyright_disabled'))
         <div class="col">
 
             <div class="form-group">
@@ -224,6 +225,7 @@
             </div> <!-- form-group -->
 
         </div> <!-- col -->
+        @endif
 
     </div> <!-- row -->
 

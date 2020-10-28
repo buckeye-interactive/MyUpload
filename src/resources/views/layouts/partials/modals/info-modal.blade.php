@@ -29,9 +29,11 @@
                 <li>
                     <strong>Original Date:</strong> <span class='input' data-name='original_date'></span>
                 </li>
+                @if(!config('myupload.copyright_disabled'))
                 <li>
                     <strong>If you own the copyright, how would you like the image to be used by people viewing the web site?</strong> <span class='input' data-name='copyright'></span>
                 </li>
+                @endif
                 <li>
                     <strong>Use Authorization:</strong> <span class='input' data-name='authorization'></span>
                 </li>
