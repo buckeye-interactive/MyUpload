@@ -129,10 +129,10 @@ class MediaItemController extends Controller
     public function update(Request $request, MediaItem $mediaItem)
     {
         $request->validate([
-            "original_creator" => "required",
+            "original_creator" => config('myupload.author_not_required') ? '' : "required",
             "title" => "required",
             "description" => "required",
-            "credit" => "required",
+            "credit" => config('myupload.credit_disabled') ? '' : "required",
             "copyright" => config('myupload.copyright_disabled') ? '' : "required",
             "authorization" => "required"
         ],[
@@ -159,10 +159,10 @@ class MediaItemController extends Controller
     public function bulkUpdate(Request $request)
     {
         $request->validate([
-            "original_creator" => "required",
+            "original_creator" => config('myupload.author_not_required') ? '' : "required",
             "title" => "required",
             "description" => "required",
-            "credit" => "required",
+            "credit" => config('myupload.credit_disabled') ? '' : "required",
             "copyright" => config('myupload.copyright_disabled') ? '' : "required",
             "authorization" => "required"
         ]);

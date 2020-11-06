@@ -98,8 +98,8 @@
                                 <div class="row">                                
                                     <div class="col-12">
                                         <div class="form-group">
-                                            <label>Metadata (author, description, etc.)*</label>
-                                            <label class="custom-checkbox">Submit metadata for each item individually
+                                            <label>{{ config('myupload.metadata_label') }}</label>
+                                            <label class="custom-checkbox">{{ config('myupload.metadata_label_individual') }}
                                                 <input 
                                                     checked
                                                     type="radio" 
@@ -109,7 +109,7 @@
                                                 >
                                                 <span class="radio"></span>
                                             </label>
-                                            <label class="custom-checkbox">Submit metadata that will be used for all items
+                                            <label class="custom-checkbox">{{ config('myupload.metadata_label_group') }}
                                                 <input 
                                                     type="radio" 
                                                     name="metadata" 
