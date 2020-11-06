@@ -8,31 +8,30 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>{{ config('myupload.title') }}</title>
-        
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
         <!-- Styles -->
-        
+
         <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.2/css/all.css'> 
         <link rel="stylesheet" href="{{ asset('css/dropzone.min.css') }}">
         <link href="{{ asset('assets/main.css') }}" rel="stylesheet">
 
     </head>
     <body>
-    
+
         @yield('header')
 
         @include('layouts.partials.toasts')
-        
+
         @yield('layout-content')
 
         @section('footer')
             @include('layouts.partials.footer')
         @show
-        
+
         @if(env('GA_PROPERTY_ID'))
             <!-- Global site tag (gtag.js) - Google Analytics -->
             <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GA_PROPERTY_ID') }}"></script>

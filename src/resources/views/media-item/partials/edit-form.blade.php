@@ -49,7 +49,7 @@
 
             <div class="form-group date">
 
-                <label for='original_date'>{{ __('Original Date') }}</label>
+                <label for='original_date'>{{ config('myupload.date_label') }}</label>
 
                 <input
                 type="text"
@@ -58,7 +58,7 @@
                 value="{{ old('original_date', optional($mediaItem)->original_date) }}"
                 data-previous="{{ optional($previousItem)->original_date }}"
                 >
-                <small class='form-text text-muted'>When was the item taken or created?</small>
+                <small class='form-text text-muted'>{{ config('myupload.date_label_sub') }}</small>
 
             </div> <!-- form-group -->
 
@@ -68,7 +68,7 @@
 
             <div class="form-group">
 
-                <label for='original_location'>{{ __('Original Location') }}</label>
+                <label for='original_location'>{{ config('myupload.location_label') }}</label>
 
                 <input
                 type="text"
@@ -78,7 +78,7 @@
                 value="{{ old('original_location', optional($mediaItem)->original_location) }}"
                 data-previous="{{ optional($previousItem)->original_location }}"
                 >
-                <small class='form-text text-muted'>Address and city if possible.</small>
+                <small class='form-text text-muted'>{{ config('myupload.location_label_sub') }}</small>
 
             </div> <!-- form-group -->
 
@@ -92,7 +92,7 @@
 
             <div class="form-group">
 
-                <label for='original_creator'>{{ __('Author/Creator*') }}</label>
+                <label for='original_creator'>{{ config('myupload.author_label') }}</label>
 
                 <input
                 required
@@ -103,7 +103,7 @@
                 value="{{ old('original_creator', optional($mediaItem)->original_creator) }}"
                 data-previous="{{ optional($previousItem)->original_creator }}"
                 >
-                <small class="form-text text-muted">{{ __('Who took the photo or wrote the document?') }}</small>
+                <small class="form-text text-muted">{{ config('myupload.author_label_sub') }}</small>
 
             </div> <!-- form-group -->
 
@@ -117,7 +117,7 @@
 
             <div class="form-group">
 
-                <label for='description'>{{ __('Description*') }}</label>
+                <label for='description'>{{ config('myupload.description_label') }}</label>
 
                 <textarea
                 required
@@ -127,7 +127,7 @@
                 data-previous="{{ optional($previousItem)->description }}"
                 >{{ old('description', optional($mediaItem)->description) }}</textarea>
 
-                <small class='form-text text-muted'>What is this item and why is it important?</small>
+                <small class='form-text text-muted'>{{ config('myupload.description_label_sub') }}</small>
 
             </div> <!-- form-group -->
 
@@ -147,11 +147,12 @@
 
     <div class="row">
 
+        @if(!config('myupload.credit_disabled'))
         <div class="col">
 
             <div class="form-group">
 
-                <label for='credit'>{{ __('Credit*') }}</label>
+                <label for='credit'>{{ config('myupload.credit_label') }}</label>
 
                 <textarea
                 required
@@ -160,11 +161,12 @@
                 class='form-control'
                 data-previous="{{ optional($previousItem)->credit }}"
                 >{{ old('credit', optional($mediaItem)->credit) }}</textarea>
-                <small class='form-text text-muted'>How would you like your name to appear on {{ config('myupload.title') }}?</small>
+                <small class='form-text text-muted'>{{ config('myupload.credit_label_sub') }}</small>
 
             </div> <!-- form-group -->
 
         </div> <!-- col -->
+        @endif
 
         @if(!config('myupload.copyright_disabled'))
         <div class="col">
