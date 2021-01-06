@@ -286,7 +286,9 @@ class MediaItemController extends Controller
             'reviewed_at' => Carbon::now(),
         ]);
         $email = $mediaItem->user_email;
-        Mail::to($email)->send(new MediaApproved($mediaItem));
+        if(!config('myupload.approval_emails_disabled',false)) {
+            Mail::to($email)->send(new MediaApproved($mediaItem));
+        }
     }
     private function reject(MediaItem $mediaItem, User $user, $comment = null)
     {
@@ -297,7 +299,9 @@ class MediaItemController extends Controller
             'reviewed_at' => Carbon::now(),
         ]);
         $email = $mediaItem->user_email;
-        Mail::to($email)->send(new MediaRejected($mediaItem));
+        if(!config('myupload.approval_emails_disabled',false)) {
+            Mail::to($email)->send(new MediaRejected($mediaItem));
+        }
     }
 
     public function export(Request $request)

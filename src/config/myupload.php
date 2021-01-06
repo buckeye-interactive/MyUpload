@@ -7,4 +7,5 @@ return [
     'wanted_items_text' => getenv('MYUPLOAD_WANTED_ITEMS','We are looking for photographs, documents and audiovisual materials that tell the stories of our community. Our most wanted subjects are:'),
     'copyright_disabled' => getenv('MYUPLOAD_COPYRIGHT_DISABLED',false),
     'thankyou' => getenv('MYUPLOAD_THANKYOU','Your item has been uploaded. You will receive an email when your item is loaded.'),
+    'approval_emails_disabled' => getenv('MYUPLOAD_APPROVAL_EMAILS_DISABLED',false),
 ];
