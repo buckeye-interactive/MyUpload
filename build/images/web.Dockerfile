@@ -17,4 +17,7 @@ ENV CACHE_DRIVER='file'
 ENV DB_DRIVER='pgsql'
 ENV SESSION_DRIVER='file'
 
+# Use Composer v1 instead of default v2
+RUN composer self-update 1.10.19
+
 RUN webpack-app-build.sh && laravel-app-build.sh && php artisan storage:link
