@@ -135,6 +135,8 @@ class MediaItemController extends Controller
             "credit" => "required",
             "copyright" => config('myupload.copyright_disabled') ? '' : "required",
             "authorization" => "required"
+        ],[
+            'authorization.required' => 'Check the accuracy verification box.',
         ]);
 
 
