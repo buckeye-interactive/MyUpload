@@ -4,8 +4,8 @@
 
         <ul>
             <li>
-                <a class="{{ Route::is('media-item.create') ? 'active' : '' }}" href='{{ route('media-item.create') }}' data-toggle="tooltip" data-placement="right" title="{{ __('To MyUpload Home') }}">
-                    <span class="sr-only">{{ __('To MyUpload Home') }}</span>
+                <a class="{{ Route::is('media-item.create') ? 'active' : '' }}" href='{{ route('media-item.create') }}' data-toggle="tooltip" data-placement="right" title="{{ __('To '.config('myupload.title').' Home') }}">
+                    <span class="sr-only">{{ __('To '.config('myupload.title').' Home') }}</span>
                     <i class="fas fa-home"></i>
                 </a>
             </li>
