@@ -20,9 +20,11 @@
                 <li>
                     <strong>{{ config('myupload.author_label') }}:</strong> <span class='input' data-name='original_creator'></span>
                 </li>
+                @if(!config('myupload.credit_disabled'))
                 <li>
                     <strong>{{ config('myupload.credit_label') }}:</strong> <span class='input' data-name='credit'></span>
                 </li>
+                @endif
                 <li>
                     <strong>{{ config('myupload.location_label') }}:</strong> <span class='input' data-name='original_location'></span>
                 </li>
