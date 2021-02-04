@@ -15,28 +15,28 @@
                     <strong>Title:</strong> <span class='input' data-name='title'></span>
                 </li>
                 <li>
-                    <strong>Description:</strong> <span class='input' data-name='description'></span>
+                    <strong>{{ config('myupload.description_label') }}:</strong> <span class='input' data-name='description'></span>
                 </li>
                 <li>
-                    <strong>Author/Creator:</strong> <span class='input' data-name='original_creator'></span>
+                    <strong>{{ config('myupload.author_label') }}:</strong> <span class='input' data-name='original_creator'></span>
                 </li>
                 <li>
-                    <strong>Credit:</strong> <span class='input' data-name='credit'></span>
+                    <strong>{{ config('myupload.credit_label') }}:</strong> <span class='input' data-name='credit'></span>
                 </li>
                 <li>
-                    <strong>Original Location:</strong> <span class='input' data-name='original_location'></span>
+                    <strong>{{ config('myupload.location_label') }}:</strong> <span class='input' data-name='original_location'></span>
                 </li>
                 <li>
-                    <strong>Original Date:</strong> <span class='input' data-name='original_date'></span>
+                    <strong>{{ config('myupload.date_label') }}:</strong> <span class='input' data-name='original_date'></span>
                 </li>
                 @if(!config('myupload.copyright_disabled'))
                 <li>
                     <strong>If you own the copyright, how would you like the image to be used by people viewing the web site?</strong> <span class='input' data-name='copyright'></span>
                 </li>
-                @endif
                 <li>
                     <strong>Use Authorization:</strong> <span class='input' data-name='authorization'></span>
                 </li>
+                @endif
             </ul>
 
             <div class="mt-3 button-container d-flex flex-wrap align-items-center justify-content-center">
