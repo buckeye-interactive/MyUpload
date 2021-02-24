@@ -380,7 +380,9 @@ class MediaItemController extends Controller
             $email = $request->user()->email;
         }
 
-        Mail::to($email)->send(new MediaSubmitted($media));
+        if(!config('myupload.submission_emails_disabled',false)) {
+            Mail::to($email)->send(new MediaSubmitted($media));
+        }
 
         return view('media-item.upload-more');
     }
