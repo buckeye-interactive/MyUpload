@@ -22,5 +22,6 @@ return [
     'credit_label' => getenv('MYUPLOAD_CREDIT_LABEL','Credit*'),
     'credit_label_sub' => getenv('MYUPLOAD_CREDIT_LABEL_SUB','How would you like your name to appear on MyUpload?'),
     'author_not_required' => getenv('MYUPLOAD_AUTHOR_NOT_REQUIRED',0),
+    'submission_emails_disabled' => getenv('MYUPLOAD_SUBMISSION_EMAILS_DISABLED',false),
     'approval_emails_disabled' => getenv('MYUPLOAD_APPROVAL_EMAILS_DISABLED',false),
 ];
