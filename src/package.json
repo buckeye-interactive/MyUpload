@@ -34,7 +34,7 @@
         "file-loader": "^3.0.1",
         "jquery": "^3.2",
         "mini-css-extract-plugin": "^0.8.0",
-        "node-sass": "^4.9.0",
+        "node-sass": "^7.0.0",
         "popper.js": "^1.12",
         "resolve-url-loader": "2.3.1",
         "sass": "^1.20.1",
