@@ -4,7 +4,7 @@
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development webpack --mode development --env.COLOR=$PRIMARY_COLOR",
         "prod": "npm run production",
-        "production": "cross-env NODE_ENV=development webpack --mode production --env.COLOR=$PRIMARY_COLOR",
+        "production": "cross-env NODE_ENV=development NODE_OPTIONS=--openssl-legacy-provider webpack --mode production --env.COLOR=$PRIMARY_COLOR",
         "watch": "webpack-dev-server --env.DOMAIN=$VIRTUAL_HOST --mode development --env.COLOR=$PRIMARY_COLOR"
     },
     "dependencies": {
