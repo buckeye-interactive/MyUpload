@@ -4,7 +4,7 @@
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development webpack --mode development --env.COLOR=$PRIMARY_COLOR",
         "prod": "npm run production",
-        "production": "cross-env NODE_ENV=development webpack --mode production --env.COLOR=$PRIMARY_COLOR",
+        "production": "cross-env NODE_ENV=development NODE_OPTIONS=--openssl-legacy-provider webpack --mode production --env.COLOR=$PRIMARY_COLOR",
         "watch": "webpack-dev-server --env.DOMAIN=$VIRTUAL_HOST --mode development --env.COLOR=$PRIMARY_COLOR"
     },
     "dependencies": {
@@ -34,7 +34,6 @@
         "file-loader": "^3.0.1",
         "jquery": "^3.2",
         "mini-css-extract-plugin": "^0.8.0",
-        "node-sass": "^4.9.0",
         "popper.js": "^1.12",
         "resolve-url-loader": "2.3.1",
         "sass": "^1.20.1",
