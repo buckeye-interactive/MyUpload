@@ -6,6 +6,7 @@ import 'daterangepicker';
 import moment from 'moment';
 
 $(function () {
+    console.log(process.env);
     $.urlParam = function (name) {
         var results = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.href);
         if (results == null) {
@@ -51,6 +52,8 @@ $(function () {
         const nameInput = uploadForm.find('input[name="submitted_users_name"]');
         const phoneInput = uploadForm.find('input[name="phone_number"]');
         const emailInput = uploadForm.find('input[name="email"]');
+        let fileTypes = window.UPLOAD_FILE_TYPES || '';
+        fileTypes = fileTypes.split(' ').join(', ');
 
         $('#upload .dz-input')
             .addClass('dropzone')
@@ -66,7 +69,7 @@ $(function () {
                 dictFileTooBig: `The file is too big. Max file size: ${maxFileSize}`,
                 dictInvalidFileType: 'Invalid file type.',
                 dictResponseError: 'Server response invalid.',
-                acceptedFiles: 'image/*, .pdf, .wav, .mp3, .mp4',
+                acceptedFiles: ['image/*', fileTypes].join(', '),
             });
 
         var myDropzone = Dropzone.forElement('.dz-input');

@@ -45,6 +45,9 @@
             </script>
         @endif
 
+        <script>
+            window.UPLOAD_FILE_TYPES = "{{ env('UPLOAD_FILE_TYPES') }}";
+        </script>
         <script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <script src="{{ asset('assets/bundle.js') }}"></script>
