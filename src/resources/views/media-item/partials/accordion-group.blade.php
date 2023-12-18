@@ -16,6 +16,7 @@
             @php
                 $previousItem = null;
                 $media = $mediaItem->getMedia('media')->first();
+                if (!$media) continue;
                 $type = File::extension($media->file_name);
             @endphp
             
