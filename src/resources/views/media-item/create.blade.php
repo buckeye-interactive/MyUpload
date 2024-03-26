@@ -132,7 +132,8 @@
                     <h2 class="h3">{{ __("Instructions:") }}</h2>
                 </div>
                 <ol>
-                    <li>Upload your items and permission form in the box on the left. You must have your parent or guardian sign this <a href="{{ asset('pdf/Photo Video Consent.pdf') }}" target="_blank">permission form</a>. Upload it and as many images/videos/audio files as you'd like. Accepted file formats are: {{ env('UPLOAD_FILE_TYPES') }}</li>
+                    <li>Have your parent or guardian sign the permission form you downloaded from the <a href="https://www.columbuslibrary.org/teens/" target="_blank">Teens website page</a>.</li>
+                    <li>Upload it and as many images/videos/audio files as you'd like. Accepted file formats are: {{ env('UPLOAD_FILE_TYPES') }}</li>
                     <li>Describe your items. Remember to hit submit after you upload your items in the box. The description screen will appear for each item.</li>
                     <li class="mb-3">Submit. {{ config('myupload.submit_step_text') }}</li>
                     <strong>**Note: JavaScript must be enabled for this form to work.</strong>
