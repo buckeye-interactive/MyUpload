@@ -48,7 +48,7 @@ $(function () {
     if (uploadForm.length) {
         var uploadSubmit = $('.upload-submit');
         var infoSubmit = $('.info-submit');
-        const maxFileSize = 1000;
+        const maxFileSize = 200;
         const nameInput = uploadForm.find('input[name="submitted_users_name"]');
         const phoneInput = uploadForm.find('input[name="phone_number"]');
         const emailInput = uploadForm.find('input[name="email"]');
