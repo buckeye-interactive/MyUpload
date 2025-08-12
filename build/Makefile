@@ -47,9 +47,9 @@ export SESSION_DRIVER=memcached
 
 # Container execs
 DB_CONTAINER_NAME=docker ps --format '{{.Names}}' --filter "name=$(COMPOSE_PROJECT_NAME)_db | head -n1"
-DOCKER_WEB_EXEC=docker-compose exec --user=application web
-DOCKER_DB_EXEC=docker-compose exec db
-DOCKER_DB_COMMAND=docker-compose exec -T db
+DOCKER_WEB_EXEC=docker compose exec --user=application web
+DOCKER_DB_EXEC=docker compose exec db
+DOCKER_DB_COMMAND=docker compose exec -T db
 
 # SQL related
 PG_DUMP=pg_dump -Fc -U $$POSTGRES_USER $$POSTGRES_USER
@@ -61,17 +61,17 @@ SQL_BACKUP_FILE=backup.psql
 -include env.mk
 
 up:
-	docker-compose up -d
+	docker compose up -d
 
 pull:
-	docker-compose pull
+	docker compose pull
 
 logs:
-	docker-compose logs -f
+	docker compose logs -f --tail=100
 
 down:
-	docker-compose down
-	docker-compose rm
+	docker compose down
+	docker compose rm
 
 web-shell:
 	$(DOCKER_WEB_EXEC) bash
