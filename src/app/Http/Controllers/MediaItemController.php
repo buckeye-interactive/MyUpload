@@ -8,12 +8,12 @@ use App\Mail\MediaSubmitted;
 use App\Mail\MediaApproved;
 use App\Mail\MediaRejected;
 use App\WantedPhoto as WantedPhoto;
-use Spatie\MediaLibrary\Models\Media as Media;
+use Spatie\MediaLibrary\MediaCollections\Models\Media as Media;
 use Illuminate\Http\Request;
 use App\Exports\MediaItemExport;
 use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
-use Spatie\MediaLibrary\MediaStream;
+use Spatie\MediaLibrary\Support\MediaStream;
 use Illuminate\Support\Facades\Mail;
 
 class MediaItemController extends Controller

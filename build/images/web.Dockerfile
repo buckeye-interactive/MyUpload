@@ -1,4 +1,4 @@
-FROM buckii/web-laravel
+FROM buckii/web-laravel:8.3
 
 ADD app.tar /app
 
